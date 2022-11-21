@@ -1,7 +1,7 @@
 const message = require('../client/models/message');
 
 function helloworld(req, res) {
-    const msg = new message("Hello World", "Hello World");
+    let msg = new message("Hello World", "Hello World");
     msg.title = "Hello w";
     res.json(msg);
 }

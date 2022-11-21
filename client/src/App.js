@@ -18,8 +18,16 @@ class App extends Component {
   }
 
   getMessage() {
-    fetch('/')
-      .then(response => this.setState({ message: response.message, title: response.title, timestamp: response.timestamp }));
+    fetch('http://localhost:3000/')
+      // response is a html page
+      .then(response => response.json())
+      .then(data => {
+        this.setState({
+          message: data.message,
+          title: data.title,
+          timestamp: data.timestamp
+        });
+      })
   }
 
   render() {
